@@ -15,7 +15,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 @font-face {
   font-family: Roboto;
   src: url('./assets/fonts/Roboto-Regular.ttf');
@@ -37,15 +36,18 @@ export default {
   --light-gray: #fafafa;
   --gray: #ddd;
   --text: #333;
+  --overlay: rgba(0, 0, 0, 0.5);
 }
 
 body {
   margin: 0;
   font-family: Roboto, Arial, Helvetica, sans-serif;
-  background: url("./assets/images/bg.png");
+  background: url('./assets/images/bg.png');
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
 }
 
@@ -59,5 +61,4 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
 </style>
