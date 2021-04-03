@@ -42,7 +42,6 @@ export default {
 body {
   margin: 0;
   font-family: Roboto, Arial, Helvetica, sans-serif;
-  background-color: blue;
 }
 
 h1, h2, h3 {
