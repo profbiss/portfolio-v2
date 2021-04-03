@@ -7,27 +7,42 @@
           <span class="navbar__desc">Full Stack Developer</span>
         </a>
       </li>
-      <li class="navbar__item">
-        <a href="#" class="navbar__link">
-          <img src="../assets/icons/person.svg" alt="Navigation icon" class="navbar__icon">
-          About</a>
-      </li>
-      <li class="navbar__item">
-        <a href="#" class="navbar__link">
-          <img src="../assets/icons/web.svg" alt="Navigation icon" class="navbar__icon">
-          Portfolio</a>
-      </li>
-      <li class="navbar__item">
-        <a href="#" class="navbar__link">
-          <img src="../assets/icons/mail.svg" alt="Navigation icon" class="navbar__icon">
-          Contacts</a>
+      <li class="navbar__item" v-for="(item, index) in navLinks" :key="index">
+        <a href="#" class="navbar__link" :class="`navbar__link_${index + 1}`">
+          <img :src="item.icon" alt="Navigation icon" class="navbar__icon" />
+          {{ item.name }}</a
+        >
       </li>
     </ul>
   </nav>
 </template>
 
 <script>
-export default {};
+import AboutIcon from '../assets/icons/person.svg';
+import PortfolioIcon from '../assets/icons/web.svg';
+import ContractsIcon from '../assets/icons/mail.svg';
+
+export default {
+  data: () => ({
+    navLinks: [
+      {
+        name: 'About',
+        link: '#',
+        icon: AboutIcon,
+      },
+      {
+        name: 'Portfolio',
+        link: '#',
+        icon: PortfolioIcon,
+      },
+      {
+        name: 'Contacts',
+        link: '#',
+        icon: ContractsIcon,
+      },
+    ],
+  }),
+};
 </script>
 
 <style lang="scss" scoped>
@@ -58,6 +73,12 @@ export default {};
     font-size: 14px;
     color: var(--brown);
   }
+  &__item {
+    transition: 0.3s;
+    &:hover {
+      background-color: var(--gray);
+    }
+  }
   &__link {
     display: flex;
     align-items: center;
@@ -65,6 +86,25 @@ export default {};
     font-family: Roboto-Light, Arial, Helvetica, sans-serif;
     font-size: 15px;
     color: var(--text);
+    transition: 0.3s;
+    &_1 {
+      &:hover {
+        border-left: 3px solid #008073;
+      }
+    }
+    &_2 {
+      &:hover {
+        border-left: 3px solid #3f51b5;
+      }
+    }
+    &_3 {
+      &:hover {
+        border-left: 3px solid #795548;
+      }
+    }
+    &:hover {
+      background-color: var(--light-gray);
+    }
   }
   &__icon {
     padding: 0 15px;
