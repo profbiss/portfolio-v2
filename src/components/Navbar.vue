@@ -15,6 +15,10 @@
           <div class="hamburger-inner"></div>
         </div>
       </button>
+      <a class="navbar__title">
+        <h2 class="navbar__plank-name">Alexey Maximchik</h2>
+        <span class="navbar__plank-desc">Full Stack Developer</span>
+      </a>
     </div>
     <ul
       class="navbar__list"
@@ -161,6 +165,8 @@ export default {
     position: fixed;
     top: 0;
     display: none;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 65px;
     background: #fff;
@@ -171,8 +177,22 @@ export default {
       box-shadow: none;
     }
     @media (max-width: 992px) {
-      display: block;
+      display: flex;
     }
+  }
+  &__title {
+    text-align: center;
+  }
+  &__plank-name {
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--teal);
+  }
+  &__plank-desc {
+    font-family: Roboto-Light, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    color: var(--brown);
   }
   &__overlay {
     position: fixed;
@@ -180,6 +200,7 @@ export default {
     right: 0;
     bottom: 0;
     left: 0;
+    display: none;
     visibility: hidden;
     opacity: 0;
     background-color: var(--overlay);
@@ -188,10 +209,16 @@ export default {
       visibility: visible;
       opacity: 1;
     }
+    @media (max-width: 992px) {
+      display: block;
+    }
   }
 }
 
 .hamburger {
+  position: absolute;
+  top: 40%;
+  left: 0;
   padding: 15px 15px;
   display: inline-block;
   cursor: pointer;
@@ -205,6 +232,7 @@ export default {
   border: 0;
   margin: 0;
   overflow: visible;
+  transform: scale(0.8) translateY(-50%);
 }
 .hamburger:hover {
   opacity: 0.7;
@@ -215,7 +243,7 @@ export default {
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: #000;
+  background-color: var(--teal);
 }
 
 .hamburger-box {
@@ -235,7 +263,7 @@ export default {
 .hamburger-inner::after {
   width: 40px;
   height: 4px;
-  background-color: #000;
+  background-color: var(--teal);
   border-radius: 4px;
   position: absolute;
   transition-property: transform;
