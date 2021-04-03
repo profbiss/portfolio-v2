@@ -1,15 +1,19 @@
 <template>
   <div>
     <Navbar />
+    <main class="main">
+      <TitleSection />
+    </main>
   </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar.vue';
+import TitleSection from './components/TitleSection.vue';
 
 export default {
   components: {
-    Navbar,
+    Navbar, TitleSection,
   },
 };
 </script>
@@ -60,5 +64,13 @@ ul {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.main {
+  margin-left: 210px;
+  @media(max-width: 992px) {
+    margin-top: 65px;
+    margin-left: 0;
+  }
 }
 </style>
