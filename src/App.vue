@@ -1,26 +1,63 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Navbar />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Navbar from './components/Navbar.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld,
+    Navbar,
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+@font-face {
+  font-family: Roboto;
+  src: url('./assets/fonts/Roboto-Regular.ttf');
 }
+
+@font-face {
+  font-family: Roboto-Thin;
+  src: url('./assets/fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+  font-family: Roboto-Light;
+  src: url('./assets/fonts/Roboto-Light.ttf');
+}
+
+:root {
+  --teal: #008073;
+  --brown: #795548;
+  --light-gray: #fafafa;
+  --gray: #ddd;
+  --text: #333;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  background-color: blue;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 </style>
